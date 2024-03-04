@@ -134,9 +134,9 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  /* background-color: #333;
   width: 80%;
-  padding: 1rem;
+  padding: 1rem; */
   
 }
 

@@ -6,6 +6,7 @@ import Header from './components/layout/Header'
 import data from './data/reviewData'
 import ReviewList from './components/ReviewList'
 import ReviewStats from './components/ReviewStats'
+import ReviewForm from './components/ReviewForm'
 // import { FaBeer } from "react-icons/fa";
 
 
@@ -21,6 +22,8 @@ function App() {
   return (
     <>
       <Header text="Review Application" />
+
+      <ReviewForm/>
 
       <div className="container">
         <ReviewStats reviews={review} />
