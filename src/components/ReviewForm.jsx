@@ -1,5 +1,5 @@
 import { useState } from "react" 
-
+import Button from "./layout/Button"
 
 function ReviewForm() {
     const [text, setText] = useState('')
@@ -15,7 +15,11 @@ function ReviewForm() {
                 <h3>Kindly drop a review of our services</h3>
                 <div className="input-group">
                     <input type="text" value={text} placeholder='Drop your review' onChange={textHandler} />
-                    <button type="submit">Submit</button>
+                    {/* <button type="submit">Submit</button> */}
+                    <Button type='submit' variant='secondary' >
+                        Submit
+                    </Button>
+
                 </div>
             </form>
       </div>
