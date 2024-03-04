@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ReviewStats({reviews}) {
-    let average = reviews.reduc((acc, cur) => {
+    let average = reviews.reduce((acc, cur) => {
         return acc + cur.rating}, 0)/reviews.length
    
     
