@@ -12,7 +12,9 @@ function ReviewForm({handleAdd}) {
 //state for input text
     const [text, setText] = useState('')
 //state for button disabled
-    const [btnDisabled, setBtnDisabled] = useState('true')
+// this should be the real value from class but it kept throwing an error
+//    const [btnDisabled, setBtnDisabled] = useState('true')
+    const [btnDisabled, setBtnDisabled] = useState('disabled={true}')
 //state for validation (characters)
     const [msg, setMsg] = useState('')
 //state to handle ratings from users
