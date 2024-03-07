@@ -255,13 +255,13 @@ input:focus {
     /* flex-direction: column; */
     /* align-items: center; */
 
-    .card {
+    /* .card {
 
-      /* grid-area: 1 / 1 / 2 / 4; */
-      /* max-width: 200px;
-      display: flex; */
-      /* flex-direction: column; */
-    }
+      grid-area: 1 / 1 / 2 / 4;
+      max-width: 200px;
+      display: flex;
+      flex-direction: column;
+    } */
    
   }
 }
