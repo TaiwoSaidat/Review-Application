@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { v4 as uuid } from 'uuid'
+import { Link } from 'react-router-dom'
+// import { v4 as uuid } from 'uuid'
 import data from '../../data/reviewData'
 import ReviewList from '../ReviewList'
 import ReviewStats from '../ReviewStats'
@@ -34,22 +34,22 @@ function Review() {
         setReview([newReview, ...review])
       }
 
-      const navigate = useNavigate()
-
   return (
     <>
-      <ReviewForm handleAdd={AddReview} />
+      {/* <ReviewForm handleAdd={AddReview} /> */}
 
-        <div className="container">
-            <Button type='button' variant='secondary' onClick={() => navigate('/allreviews')}>
+        {/* <div className="container">
+            <Button type='button' variant='secondary' >
                 See All Reviews
             </Button>
-        </div>
+        </div> */}
 
-      {/* <div className="container">
+      <div className="container">
         <ReviewStats reviews={review} />
-        <ReviewList reviews={review} deleteReview={deleteReview}/> 
-      </div> */}
+        <div className="card-container">
+            <ReviewList reviews={review} deleteReview={deleteReview}/> 
+        </div>
+      </div>
 
         <div className="about-link" >
           <Link to='/'>
