@@ -1,9 +1,13 @@
-// import React from 'react'
+
+const header = {
+  backgroundColor: '#ff6a95',
+  color: '#fff'
+}
 
 function Header({text}) {
   return (
     <>
-      <header>
+      <header style={header} className="head" >
         <h2>{text}</h2>
       </header>
     </>
