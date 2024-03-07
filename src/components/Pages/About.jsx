@@ -11,9 +11,6 @@ function About() {
           <p>This is a basic application for customers to drove their review on the usage on our services</p>
           <p>Version 1.0.0</p>
           <br />
-          <p className='about-link'>
-            <Link to='/'>Go Back Home</Link>
-          </p>
         </div>
         <div className="about-link" >
           <Link to='/'>

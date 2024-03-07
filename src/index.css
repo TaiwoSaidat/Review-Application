@@ -25,7 +25,8 @@ ul {
 
 header {
   height: 70px;
-  width: 100%;
+  width: auto;
+  /* overflow: hidden; */
   /* display: flex; */
   justify-content: space-between;
   align-items: center;
