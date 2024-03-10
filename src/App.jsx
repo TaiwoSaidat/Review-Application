@@ -7,6 +7,8 @@ import Home from './components/Pages/Home'
 import Review from './components/Pages/Review'
 import About from './components/Pages/About'
 import AllReviews from './components/Pages/AllReviews'
+import { useState, useEffect } from 'react'
+import data from "./data/reviewData.js";
 // import { FaBeer } from "react-icons/fa";
 
 // First Task: Create a New page, called All-Reviews 
@@ -19,24 +21,33 @@ import AllReviews from './components/Pages/AllReviews'
 // on a big screen, and column on a small screen
 
 function App() {
+   const localStorageItems = JSON.parse(localStorage.getItem("review"));
+
+  const [review, setReview] = useState(localStorageItems || data);
+  
+   useEffect(() => {
+     localStorage.setItem("review", JSON.stringify(review));
+   }, [review]);
 
   return (
     <>
       <Header text="Review Application" />
       <Router>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />}  />
-          <Route path='/review' element={<Review/>}  />
-          <Route path='/allreviews' element={<AllReviews/>}  />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/review"
+            element={<Review review={review} setReview={setReview} />}
+          />
+          <Route
+            path="/allreviews"
+            element={<AllReviews review={review} setReview={setReview} />}
+          />
         </Routes>
       </Router>
 
-
-      
-
-      
-{/*  <h3>
+      {/*  <h3>
       Lets go for a <FaBeer />?
     </h3> */}
 
@@ -68,7 +79,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p> */}
     </>
-  )
+  );
 }
 
 export default App

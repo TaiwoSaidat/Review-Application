@@ -10,7 +10,7 @@ function ReviewList({reviews, deleteReview}) {
   return (
     <>
 
-      <div>
+      <div className="card-container">
         {reviews.map((item) => (
             <div key={item.id}>
                 <ReviewItem review={item} deleteReview={deleteReview} />

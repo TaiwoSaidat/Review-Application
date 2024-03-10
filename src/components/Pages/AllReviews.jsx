@@ -9,55 +9,52 @@ import { FaHouseUser } from "react-icons/fa"
 import Button from '../layout/Button'
 
 
-function Review() {
-    const [review, setReview]= useState(data)
-    //function to delete review.id in DOM
-      const deleteReview = (id) =>{
-        if(window.confirm('Are you sure you want to delete review?')){
-          setReview(review.filter((item) => item.id !== id))
-        }
-      }
- 
-        const handleClick = () => {
-          console.log('Button clicked!');
-        return (
-          <div>
-            {/* Button with onClick event handler */}
-            <button onClick={handleClick}>Click me</button>
-          </div>
-        );
-      }
-       
-      //function to add review
-      const AddReview = (newReview) => {
-        newReview.id=uuid()
-        setReview([newReview, ...review])
-      }
+function Review({ review, setReview }) {
+  //function to delete review.id in DOM
+  const deleteReview = (id) => {
+    if (window.confirm("Are you sure you want to delete review?")) {
+      setReview(review.filter((item) => item.id !== id));
+    }
+  };
+
+  const handleClick = () => {
+    console.log("Button clicked!");
+    return (
+      <div>
+        {/* Button with onClick event handler */}
+        <button onClick={handleClick}>Click me</button>
+      </div>
+    );
+  };
+  console.log("From all reviews page", review);
+  //function to add review
+  const AddReview = (newReview) => {
+    newReview.id = uuid();
+    setReview([newReview, ...review]);
+  };
 
   return (
     <>
       {/* <ReviewForm handleAdd={AddReview} /> */}
 
-        {/* <div className="container">
+      {/* <div className="container">
             <Button type='button' variant='secondary' >
                 See All Reviews
-            </Button>
+            </Button>+
         </div> */}
 
       <div className="container">
         <ReviewStats reviews={review} />
-        <div className="card-container">
-            <ReviewList reviews={review} deleteReview={deleteReview}/> 
-        </div>
-      </div>
+          <ReviewList reviews={review} deleteReview={deleteReview} />
 
-        <div className="about-link" >
-          <Link to='/'>
-            <FaHouseUser size={40} />
-          </Link>
-        </div>
-    </> 
-  )
+      </div>
+      <div className="about-link">
+        <Link to="/">
+          <FaHouseUser size={40} />
+        </Link>
+      </div>
+    </>
+  );
 }
 
 export default Review
