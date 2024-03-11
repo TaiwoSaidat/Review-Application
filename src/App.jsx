@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 // import wh from './assets/logo-wh.png'
 // import bk from './assets/logo-blk.png'
 import Header from './components/layout/Header'
-// import ReviewItem from './components/layout/ReviewItem'
 import Home from './components/Pages/Home'
 import Review from './components/Pages/Review'
 import About from './components/Pages/About'
@@ -11,17 +10,8 @@ import { useState, useEffect } from 'react'
 import data from "./data/reviewData.js";
 // import { FaBeer } from "react-icons/fa";
 
-// First Task: Create a New page, called All-Reviews 
-// that displays all the reviews on your application 
-
-// 2nd Task: Put a button on the Review Page, that 
-// takes a user to the All-Reviews Page 
-
-// 3rd Task: Convert the review rows (3 review in a row) 
-// on a big screen, and column on a small screen
-
 function App() {
-   const localStorageItems = JSON.parse(localStorage.getItem("review"));
+  const localStorageItems = JSON.parse(localStorage.getItem("review"));
 
   const [review, setReview] = useState(localStorageItems || data);
   
@@ -46,6 +36,35 @@ function App() {
           />
         </Routes>
       </Router>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/*  <h3>
       Lets go for a <FaBeer />?

@@ -13,7 +13,7 @@ function ReviewList({reviews, deleteReview}) {
       <div className="card-container">
         {reviews.map((item) => (
             <div key={item.id}>
-                <ReviewItem review={item} deleteReview={deleteReview} />
+              <ReviewItem review={item} deleteReview={deleteReview} />
             </div>
         ))}
       </div>
