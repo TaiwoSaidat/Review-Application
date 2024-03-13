@@ -1,6 +1,9 @@
+import { useContext } from "react"
+import ReviewContext from "../context/ReviewContext"
 import ReviewItem from "./ReviewItem"
 
 function ReviewList({reviews, deleteReview}) {
+ const {review} = useContext(ReviewContext)
 
   if(!reviews || reviews.length === 0){
       return <div className="card" > 

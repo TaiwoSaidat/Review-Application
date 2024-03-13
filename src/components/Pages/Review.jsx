@@ -1,6 +1,7 @@
-// import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
+import { ReviewProvider } from '../../context/ReviewContext'
 import ReviewForm from '../ReviewForm'
 import { FaHouseUser } from "react-icons/fa"
 import Button from '../layout/Button'
@@ -23,23 +24,22 @@ function Review({review, setReview}) {
   return (
     <>
       
-      
-      <div className="container">
-        <div className="card">
-            <ReviewForm handleAdd={AddReview} />
+      <ReviewProvider>
+        <div className="container">
+          <div className="card">
+              <ReviewForm handleAdd={AddReview} />
+          </div>
 
-            <Button type="button" variant="secondary" style={btnStyle} onClick={() => navigate("/allreviews")}>
-                See All Reviews
-            </Button>
+          <Button type="button" variant="secondary" style={btnStyle} onClick={() => navigate("/allreviews")}>
+              See All Reviews
+          </Button>
+          <div className="about-link">
+              <Link to="/">
+                  <FaHouseUser size={40} />
+              </Link>
+          </div>
         </div>
-
-        <div className="about-link">
-            <Link to="/">
-                <FaHouseUser size={40} />
-            </Link>
-        </div>
-      </div>
-
+      </ReviewProvider>
       
     </>
   );
