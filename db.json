@@ -1,0 +1,19 @@
+{
+    "review": [
+        {
+            "id": 1,
+            "rating": 8,
+            "text": "this is coming from a mock server"
+        },
+        {
+            "id": 2,
+            "rating": 3,
+            "text": "this is another data coming from a mock server"
+        },
+        {
+            "id": 3,
+            "rating": 9,
+            "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+        }
+    ]
+}
