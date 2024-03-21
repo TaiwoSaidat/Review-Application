@@ -1,4 +1,6 @@
-import { useState } from "react" 
+
+import { useState, useContext } from "react" 
+import ReviewContext from "../context/ReviewContext"
 import Button from "./layout/Button"
 import Rating from "./Rating"
 
@@ -8,7 +10,8 @@ const spanStyle = {
     marginTop: '10px'
 }
 
-function ReviewForm({handleAdd}) {
+function ReviewForm() {
+  const {AddReview} = useContext(ReviewContext)
 //state for input text
     const [text, setText] = useState('')
 //state for button disabled
@@ -44,7 +47,7 @@ function ReviewForm({handleAdd}) {
           text,
           rating
         }
-        handleAdd(newReview)
+        AddReview(newReview)
         setText('')
       }
     }

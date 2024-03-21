@@ -1,11 +1,14 @@
 // import React from 'react'
 // import { useState } from 'react'
+import { useContext } from "react"
+import ReviewContext from "../context/ReviewContext"
 import { FaTimes } from 'react-icons/fa'
 
 
-function ReviewItem({review, deleteReview}) {
+function ReviewItem({review}) {
+  const {deleteReview} = useContext(ReviewContext)
     // const [rating, setRating] = useState(6)
-    // const [text, setText] = useState('Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+    // const [text, setText]  = useState('Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
     
   return (
     <>
