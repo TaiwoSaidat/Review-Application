@@ -1,11 +1,23 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { v4 as uuid } from 'uuid'
-import data from '../data/reviewData'
+// import data from '../data/reviewData' 
 
 const ReviewContext = createContext()
 
 export const ReviewProvider = ({children}) => {
-    const [review, setReview] = useState(data)      
+    const [review, setReview] = useState([]) 
+    const [loading, setLoading] = useState(true)
+    
+    useEffect(() => {
+        fetch('http://localhost:5000/review')
+        .then((res) => res.json())
+        .then((data)=> {
+            setTimeout(() => {
+                setReview(data)
+                setLoading(false) 
+            }, 1000)       
+        })
+    }, {})
 
       //function to add review
         const AddReview = (newReview) => {
@@ -20,7 +32,7 @@ export const ReviewProvider = ({children}) => {
             }
         }
 
-    return <ReviewContext.Provider value={{review, AddReview, deleteReview}}>
+    return <ReviewContext.Provider value={{review, AddReview, deleteReview, loading}}>
         {children}
     </ReviewContext.Provider>
 }
