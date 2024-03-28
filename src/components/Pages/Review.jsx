@@ -14,15 +14,14 @@ function Review() {
         <ReviewForm />
         <div className="container">
           <ReviewStats />
-
           <ReviewList /> 
         </div>
-
-          <div className="about-link" >
-            <Link to='/'>
-              <FaHouseUser size={40} />
-            </Link>
-          </div>
+        
+        <div className="about-link" >
+          <Link to='/'>
+            <FaHouseUser size={40} />
+          </Link>
+        </div>
       </ReviewProvider>
     </> 
   )

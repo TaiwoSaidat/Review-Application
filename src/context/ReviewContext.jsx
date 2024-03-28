@@ -1,7 +1,10 @@
+/* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
 import { v4 as uuid } from 'uuid'
 // import data from '../data/reviewData' 
 
+
+const base_url = import.meta.env.VITE_BASE_URL
 const ReviewContext = createContext()
 
 export const ReviewProvider = ({children}) => {
@@ -9,15 +12,15 @@ export const ReviewProvider = ({children}) => {
     const [loading, setLoading] = useState(true)
     
     useEffect(() => {
-        fetch('http://localhost:5000/review')
-        .then((res) => res.json())
-        .then((data)=> {
-            setTimeout(() => {
-                setReview(data)
-                setLoading(false) 
-            }, 1000)       
-        })
-    }, {})
+        fetch(`${base_url}/review`)
+            .then((res) => res.json())
+            .then((data)=> {
+                setTimeout(() => {
+                    setReview(data)
+                    setLoading(false) 
+                }, 1000);       
+        });
+    }, []);
 
       //function to add review
         const AddReview = (newReview) => {

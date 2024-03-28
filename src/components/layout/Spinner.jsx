@@ -3,7 +3,7 @@ function Spinner() {
   return (
     <>
       <div className="container">
-        <div class="custom-loader"></div>
+        <div className="custom-loader"></div>
       </div>  
     </>
   )
